@@ -6,7 +6,7 @@
     <!-- H2 Database -->
     <Resource id="PSK1EiniusDataSource" type="PSK1EiniusDataSource">
         JdbcDriver = org.h2.Driver
-        JdbcUrl = jdbc:h2:~/h2database/PSK1EiniusDB3;AUTO_SERVER=TRUE;
+        JdbcUrl = jdbc:h2:~/h2database/PSK1EiniusDB4;AUTO_SERVER=TRUE;
         UserName = user
         Password = user
         InitialSize = 1

@@ -24,6 +24,9 @@
                 <f:param name="mealId" value="#{ingredientsList.meal.id}" />
             </h:commandButton>
         </p>
+    </h:form>
+    <h4>Delete ingredient from meal:</h4>
+    <h:form>
         <h:selectOneMenu value="#{ingredientsList.ingredient}" converter="omnifaces.SelectItemsConverter">
             <f:selectItem itemLabel="Choose ingredient to delete" noSelectionOption="true"/>
             <f:selectItems value="#{ingredientsList.allIngredients}" var="ingredient" itemLabel="#{ingredient.name}" itemValue="#{ingredient}"/>

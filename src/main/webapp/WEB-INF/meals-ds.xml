@@ -1,7 +1,7 @@
 <datasources>
     <datasource jndi-name="PSK1EiniusDataSource" pool-name="PSK1EiniusDataSource">
         <driver>h2</driver>
-        <connection-url>jdbc:h2:~/h2database/PSK1EiniusDB3;AUTO_SERVER=TRUE</connection-url>
+        <connection-url>jdbc:h2:~/h2database/PSK1EiniusDB4;AUTO_SERVER=TRUE</connection-url>
         <security>
             <user-name>user</user-name>
             <password>user</password>

@@ -62,7 +62,7 @@
                     <artifactId>mybatis-generator-maven-plugin</artifactId>
                     <version>1.4.0</version>
                     <configuration>
-                        <contexts>PSK1EiniusDB3</contexts>
+                        <contexts>PSK1EiniusDB4</contexts>
                         <verbose>true</verbose>
                     </configuration>
                     <executions>
