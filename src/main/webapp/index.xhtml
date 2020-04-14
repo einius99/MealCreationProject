@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:body>
+    <h1>Restaurants list:</h1>
+    <h:dataTable value="#{restaurantsList.restaurantList}" var="restaurant">
+        <h:column>
+            <f:facet name="header"><b>City</b></f:facet>#{restaurant.city}
+        </h:column>
+        <h:column>
+            <f:facet name="header"><b>Name</b></f:facet>
+            <h:link value="#{restaurant.name}" outcome="meals?restaurantId=#{restaurant.id}"/>
+        </h:column>
+    </h:dataTable>
+    <br/>
+    <h4>Add new restaurant:</h4>
+    <h:form>
+        <table>
+            <tr>
+                <td>City:</td>
+                <td>
+                    <h:inputText id="city" value="#{restaurantsList.restaurant.city}" required="true"/>
+                    <h:message for="city" style="color: blue"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <h:inputText id="name" value="#{restaurantsList.restaurant.name}" required="true"/>
+                    <h:message for="name" style="color: blue"/>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <h:commandButton value="Add" action="#{restaurantsList.createRestaurant}"/>
+        </p>
+    </h:form>
+</h:body>
+</html>

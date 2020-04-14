@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:body>
+    <h1>#{mealsList.restaurant.name}</h1>
+    <h2>Meals list:</h2>
+    <h:dataTable value="#{mealsList.mealList}" var="meal">
+        <h:column>
+            <f:facet name="header"><b>Name</b></f:facet>#{meal.name}
+        </h:column>
+        <h:column>
+            <f:facet name="header"><b>Type</b></f:facet>
+            <h:link value="#{meal.type}" outcome="ingredients?mealId=#{meal.id}"/>
+        </h:column>
+    </h:dataTable>
+    <br/>
+    <h4>Add new meal:</h4>
+    <h:form>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <h:inputText id="name" value="#{mealsList.meal.name}" required="true"/>
+                    <h:message for="name" style="color: blue"/>
+                </td>
+            </tr>
+            <tr>
+                <td>Type:</td>
+                <td>
+                    <h:inputText id="type" value="#{mealsList.meal.type}" required="true"/>
+                    <h:message for="type" style="color: blue"/>
+                </td>
+            </tr>
+        </table>
+        <p>
+            <h:commandButton value="Add" action="#{mealsList.createMeal}">
+                <f:param name="restaurantId" value="#{mealsList.restaurant.id}" />
+            </h:commandButton>
+        </p>
+    </h:form>
+</h:body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+>
+<h:body>
+    <h1>#{ingredientsList.meal.name} #{ingredientsList.meal.type} ingredients</h1>
+    <h2>Ingredients list:</h2>
+    <h:dataTable value="#{ingredientsList.selectedIngredients}" var="ingredient">
+        <h:column>
+            <f:facet name="header"><b></b></f:facet>#{ingredient.name}
+        </h:column>
+    </h:dataTable>
+    <br/>
+    <h4>Add new ingredient:</h4>
+    <h:form>
+        <h:selectOneMenu value="#{ingredientsList.ingredient}" converter="omnifaces.SelectItemsConverter">
+            <f:selectItem itemLabel="Choose ingredient" noSelectionOption="true"/>
+            <f:selectItems value="#{ingredientsList.allIngredients}" var="ingredient" itemLabel="#{ingredient.name}" itemValue="#{ingredient}"/>
+        </h:selectOneMenu>
+        <p>
+            <h:commandButton value="Add" action="#{ingredientsList.addIngredient}">
+                <f:param name="mealId" value="#{ingredientsList.meal.id}" />
+            </h:commandButton>
+        </p>
+    </h:form>
+    <br/>
+    <h4>Back to main page:</h4>
+    <a href="index.xhtml">Main page</a>
+</h:body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+        <typeAlias type="lt.vu.mybatis.model.Restaurant" alias="Restaurant"/>
+        <typeAlias type="lt.vu.mybatis.model.Meal" alias="Meal"/>
+        <typeAlias type="lt.vu.mybatis.model.MealIngredient" alias="MealIngredient"/>
+        <typeAlias type="lt.vu.mybatis.model.Ingredient" alias="Ingredient"/>
+    </typeAliases>
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="MANAGED"/>
+            <dataSource type="JNDI">
+                <property name="data_source" value="PSK1EiniusDataSource"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <mapper resource="mybatis.xml/RestaurantMapper.xml"/>
+        <mapper resource="mybatis.xml/MealMapper.xml"/>
+        <mapper resource="mybatis.xml/MealIngredientMapper.xml"/>
+        <mapper resource="mybatis.xml/IngredientMapper.xml"/>
+    </mappers>
+</configuration>
