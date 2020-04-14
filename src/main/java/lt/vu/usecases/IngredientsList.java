@@ -76,4 +76,9 @@ public class IngredientsList {
         return "ingredients?faces-redirect=true&mealId=" + this.meal.getId();
     }
 
+    public String deleteIngredient() {
+        mealIngredientMapper.deleteByIngredientId(this.ingredient.getId());
+        return "ingredients?faces-redirect=true&mealId=" + this.meal.getId();
+    }
+
 }

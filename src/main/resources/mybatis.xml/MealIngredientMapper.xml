@@ -28,4 +28,8 @@
     select MEALS_ID, INGREDIENTS_ID
     from PUBLIC.MEAL_INGREDIENT
   </select>
+  <delete id="deleteByIngredientId" parameterType="java.lang.Integer">
+    delete from PUBLIC.MEAL_INGREDIENT
+    where INGREDIENTS_ID = #{id,jdbcType=INTEGER}
+  </delete>
 </mapper>

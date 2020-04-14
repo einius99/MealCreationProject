@@ -21,4 +21,6 @@ public interface MealIngredientMapper {
      * @mbg.generated Mon Apr 13 23:20:18 EEST 2020
      */
     List<MealIngredient> selectAll();
+
+    int deleteByIngredientId(Integer id);
 }
