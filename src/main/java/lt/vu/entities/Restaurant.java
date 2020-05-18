@@ -33,6 +33,10 @@ public class Restaurant {
     @OneToMany(mappedBy = "restaurant")
     private List<Meal> meals = new ArrayList<>();
 
+    @Version
+    @Column(name = "OPT_LOCK_VERSION")
+    private Integer version;
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
