@@ -25,4 +25,8 @@ public class RestaurantDAO {
         return em.find(Restaurant.class, id);
     }
 
+    public Restaurant update(Restaurant restaurant){
+        return em.merge(restaurant);
+    }
+
 }
