@@ -15,6 +15,10 @@
             <f:facet name="header"><b>Name</b></f:facet>
             <h:link value="#{restaurant.name}" outcome="meals?restaurantId=#{restaurant.id}"/>
         </h:column>
+        <h:column>
+            <f:facet name="header"><b>Edit</b></f:facet>
+            <h:link value="Edit" outcome="restaurantDetails?restaurantId=#{restaurant.id}" />
+        </h:column>
     </h:dataTable>
     <br/>
     <h4>Add new restaurant:</h4>
