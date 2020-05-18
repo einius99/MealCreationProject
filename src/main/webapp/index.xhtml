@@ -5,6 +5,7 @@
       xmlns:f="http://java.sun.com/jsf/core"
 >
 <h:body>
+    <h2>#{informationSection.info()}</h2>
     <h1>Restaurants list:</h1>
     <h:dataTable value="#{restaurantsList.restaurantList}" var="restaurant">
         <h:column>
