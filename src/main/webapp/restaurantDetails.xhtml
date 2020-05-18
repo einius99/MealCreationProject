@@ -6,8 +6,8 @@
 >
 <h:head/>
 <h:body>
-    <h2>#{updateRestaurantDetails.school.name}</h2>
-    <h3>#{updateRestaurantDetails.school.city}</h3>
+    <h2>#{updateRestaurantDetails.restaurant.name}</h2>
+    <h3>#{updateRestaurantDetails.restaurant.city}</h3>
     <h:form>
         <table>
             <tr>
@@ -27,10 +27,10 @@
     </h:form>
     <h:outputText value="Other user has just modified the value. Try again to override" rendered="#{param['error'] == 'optimistic-lock-exception'}" />
     <h:form>
-        <h:commandButton value="Average review score of the restaurant" disabled="#{getAverageReviewScore.ReviewScoreGenerationRunning}" action="#{getAverageReviewScore.generateAverageReviewScore()}">
+        <h:commandButton value="Average review score of the restaurant" disabled="#{getAverageReviewScore.reviewScoreGenerationRunning}" action="#{getAverageReviewScore.generateAverageReviewScore()}">
             <f:param name="restaurantId" value="#{updateRestaurantDetails.restaurant.id}" />
         </h:commandButton>
-        <h:outputText value="#{getAverageReviewScore.getReviewScoreGenerationStatus}" />
+        <h:outputText value="#{getAverageReviewScore.reviewScoreGenerationStatus}" />
     </h:form>
 </h:body>
 </html>

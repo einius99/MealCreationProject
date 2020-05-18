@@ -10,9 +10,10 @@
         <class>lt.vu.interceptors.MethodLogger</class>
     </interceptors>
     <decorators>
-        <class>lt.vu.decorators.MainInformationDecorator</class>
+        <!--<class>lt.vu.decorators.MainInformationDecorator</class>-->
     </decorators>
     <alternatives>
         <class>lt.vu.services.AverageReviewScoreCreator</class>
+        <!--<class>lt.vu.services.ReviewScoreCreator</class>-->
     </alternatives>
 </beans>
